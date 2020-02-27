@@ -12,7 +12,7 @@ There are eight lifecycle hooks in Angular:
 * ngAfterContentChecked()
 * ngAfterViewInit()
 * ngAfterViewChecked()
-* ngonDestroy()
+* ngOnDestroy()
 
 ## Markdown Cheatsheet
 [Cheat Sheet Here](https://github.com/tchapi/markdown-cheatsheet/blob/master/README.md)
