@@ -1,15 +1,18 @@
-import { Component, OnChanges, OnInit, DoCheck } from '@angular/core';
+import { Component, OnChanges, OnInit, DoCheck, AfterContentInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnChanges, OnInit, DoCheck {
-  //Do check is called during every change detection run. Angular has an
-  //internal system that goes around the component processes every so often
-  //looking for changes that the complier cannot detect on its own. this hook
-  //is called at every change detection run, usually after ngOnInit.
+export class AppComponent implements OnChanges, OnInit, DoCheck, AfterContentInit {
+//Angular calls this after a component has been initialized. This is called only once, directly
+//after the first ngDoCheck hook is called. Similar to DoCheck but for content projected into the
+//component view with ng-content
+  ngAfterContentInit(): void {
+    alert("4. after content init called");
+  }
+
   ngDoCheck(): void {
     alert("3. do check is called");
   }
